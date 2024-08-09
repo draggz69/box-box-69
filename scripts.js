@@ -87,7 +87,7 @@ async function startGame() {
                 await applyFilterWithAnimation(e.target, 'correct');
                 console.log("colorQueryArr.length", colorQueryArr.length)
                 if (clickCounter == colorQueryArr.length) {
-                  // boxGame.removeEventListener("click", clickHandler);
+                  boxGame.removeEventListener("click", clickHandler);
                   // boxGame.removeEventListener("mouseover", hoverHandler)
                   score++
                   highestScore = Math.max(score, highestScore);
@@ -107,8 +107,8 @@ async function startGame() {
                 colorQueryArr = [];
                 start.classList.remove("hidden");
 
-                // boxGame.removeEventListener('mouseout', mouseOutHandler);
-                // boxGame.removeEventListener("click", clickHandler);
+                // boxGame.removeEventListener('mouseover', hoverHandler);
+                boxGame.removeEventListener("click", clickHandler);
             }
           } 
 
