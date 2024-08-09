@@ -69,10 +69,10 @@ async function startGame() {
       }
     };
 
-    boxGame.removeEventListener("mouseover", hoverHandler)
-    boxGame.removeEventListener('mouseout', mouseOutHandler);
-    boxGame.addEventListener("mouseover", hoverHandler)
-    boxGame.addEventListener('mouseout', mouseOutHandler);
+    // boxGame.removeEventListener("mouseover", hoverHandler)
+    // boxGame.removeEventListener('mouseout', mouseOutHandler);
+    // boxGame.addEventListener("mouseover", hoverHandler)
+    // boxGame.addEventListener('mouseout', mouseOutHandler);
 
     let clickHandler = async (e) => {
       e.preventDefault();
@@ -92,7 +92,7 @@ async function startGame() {
                 console.log("colorQueryArr.length", colorQueryArr.length)
                 if (clickCounter == colorQueryArr.length) {
                   boxGame.removeEventListener("click", clickHandler);
-                  boxGame.removeEventListener("mouseover", hoverHandler)
+                  // boxGame.removeEventListener("mouseover", hoverHandler)
                   score++
                   highestScore = Math.max(score, highestScore);
                   scr.textContent = score;
@@ -111,7 +111,7 @@ async function startGame() {
                 colorQueryArr = [];
                 start.classList.remove("hidden");
 
-                boxGame.removeEventListener('mouseover', hoverHandler);
+                // boxGame.removeEventListener('mouseover', hoverHandler);
                 boxGame.removeEventListener("click", clickHandler);
             }
           } 
