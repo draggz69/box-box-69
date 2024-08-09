@@ -1,6 +1,6 @@
 :root {
-  --box-height: 16rem;
-  --box-width: 16rem;
+  --box-height: 11rem;
+  --box-width: 11rem;
 }
   
 *, *::after, *::before {
@@ -162,3 +162,4 @@ body {
   justify-content: center;
   align-items: center;
 }
+  
