@@ -137,13 +137,13 @@ function randomColor() {
 function animation(x) {
   return new Promise((resolve, reject) => {
     let audio 
-    if (x.textContent === "red") {
+    if (x.textContent == "red") {
       audio = new Audio(`./audios/correct/${1}.mp3`);
-    } else if (x.textContent === "green") {
+    } else if (x.textContent == "green") {
       audio = new Audio(`./audios/correct/${2}.mp3`);
-    } else if (x.textContent === "blue") {
+    } else if (x.textContent == "blue") {
       audio = new Audio(`./audios/correct/${3}.mp3`);
-    } else if (x.textContent === "yellow") {
+    } else if (x.textContent == "yellow") {
       audio = new Audio(`./audios/correct/${4}.mp3`);
     }
     audio.play()
