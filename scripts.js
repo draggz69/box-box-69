@@ -69,14 +69,16 @@ async function startGame() {
       }
     };
 
-    // boxGame.removeEventListener("mouseover", hoverHandler)
-    // boxGame.removeEventListener('mouseout', mouseOutHandler);
-    // boxGame.addEventListener("mouseover", hoverHandler)
-    // boxGame.addEventListener('mouseout', mouseOutHandler);
+    boxGame.removeEventListener("mouseover", hoverHandler)
+    boxGame.removeEventListener('mouseout', mouseOutHandler);
+    boxGame.addEventListener("mouseover", hoverHandler)
+    boxGame.addEventListener('mouseout', mouseOutHandler);
 
     let clickHandler = async (e) => {
       e.preventDefault();
       if (e.target == red || e.target == blue || e.target == green || e.target == yellow) {
+          // console.log("e.target.textContent", e.target.textContent)
+          // console.log("colorQueryArr[clickCounter - 1].textContent", colorQueryArr[clickCounter-1]["textContent"])
           if (clickCounter < colorQueryArr.length) {
             if (e.target.textContent === colorQueryArr[clickCounter].textContent) {
                 clickCounter++;
@@ -85,10 +87,12 @@ async function startGame() {
                 let audio = new Audio(`./audios/correct/${rndmNmbr}.mp3`);
                 audio.play();
                 await applyFilterWithAnimation(e.target, 'correct');
+                // console.log("nice")
+                // console.log("clickCounter", clickCounter)
                 console.log("colorQueryArr.length", colorQueryArr.length)
                 if (clickCounter == colorQueryArr.length) {
                   boxGame.removeEventListener("click", clickHandler);
-                  // boxGame.removeEventListener("mouseover", hoverHandler)
+                  boxGame.removeEventListener("mouseover", hoverHandler)
                   score++
                   highestScore = Math.max(score, highestScore);
                   scr.textContent = score;
@@ -107,7 +111,7 @@ async function startGame() {
                 colorQueryArr = [];
                 start.classList.remove("hidden");
 
-                // boxGame.removeEventListener('mouseover', hoverHandler);
+                boxGame.removeEventListener('mouseover', hoverHandler);
                 boxGame.removeEventListener("click", clickHandler);
             }
           } 
