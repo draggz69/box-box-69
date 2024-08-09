@@ -134,15 +134,19 @@ body {
 
 #score {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   color: white;
   text-shadow: 2px 2px 2px rgb(105, 105, 105);
   margin: 0.5rem 0 0 0;
-  font-size: small;
+  font-size: medium;
 }
 
 #score h2 span {
+  display: inline-block;
   color: rgb(255, 216, 90);
+  margin: 5px;
 }
 
 #boxgame {
