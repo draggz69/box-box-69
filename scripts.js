@@ -82,17 +82,20 @@ async function startGame() {
           if (clickCounter < colorQueryArr.length) {
             if (e.target.textContent === colorQueryArr[clickCounter].textContent) {
                 clickCounter++;
-                let audio
                 if (e.target.textContent == "red") {
                   audio = new Audio(`./audios/correct/${1}.mp3`);
-                } else if (e.target.textContent == "green") {
+                } else if (e.target.textContent == "grn") {
                   audio = new Audio(`./audios/correct/${2}.mp3`);
                 } else if (e.target.textContent == "blue") {
                   audio = new Audio(`./audios/correct/${3}.mp3`);
-                } else if (e.target.textContent == "yellow") {
+                } else if (e.target.textContent == "yllo") {
                   audio = new Audio(`./audios/correct/${4}.mp3`);
                 }
-                audio.play();
+                audio.play()
+                // let rndmNmbr = getRandomNumber(1, 4);
+                // console.log(rndmNmbr)
+                // let audio = new Audio(`./audios/correct/${rndmNmbr}.mp3`);
+                // audio.play();
                 await applyFilterWithAnimation(e.target, 'correct');
                 // console.log("nice")
                 // console.log("clickCounter", clickCounter)
@@ -118,7 +121,7 @@ async function startGame() {
                 colorQueryArr = [];
                 start.classList.remove("hidden");
 
-                // boxGame.removeEventListener('mouseover', hoverHandler);
+                // boxGame.removeEventListener('mouseout', mouseOutHandler);
                 boxGame.removeEventListener("click", clickHandler);
             }
           } 
@@ -139,11 +142,11 @@ function animation(x) {
     let audio 
     if (x.textContent == "red") {
       audio = new Audio(`./audios/correct/${1}.mp3`);
-    } else if (x.textContent == "green") {
+    } else if (x.textContent == "grn") {
       audio = new Audio(`./audios/correct/${2}.mp3`);
     } else if (x.textContent == "blue") {
       audio = new Audio(`./audios/correct/${3}.mp3`);
-    } else if (x.textContent == "yellow") {
+    } else if (x.textContent == "yllo") {
       audio = new Audio(`./audios/correct/${4}.mp3`);
     }
     audio.play()
