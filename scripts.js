@@ -82,9 +82,16 @@ async function startGame() {
           if (clickCounter < colorQueryArr.length) {
             if (e.target.textContent === colorQueryArr[clickCounter].textContent) {
                 clickCounter++;
-                let rndmNmbr = getRandomNumber(1, 4);
-                console.log(rndmNmbr)
-                let audio = new Audio(`./audios/correct/${rndmNmbr}.mp3`);
+                let audio
+                if (e.target.textContent === "red") {
+                  audio = new Audio(`./audios/correct/${1}.mp3`);
+                } else if (e.target.textContent === "green") {
+                  audio = new Audio(`./audios/correct/${2}.mp3`);
+                } else if (e.target.textContent === "blue") {
+                  audio = new Audio(`./audios/correct/${3}.mp3`);
+                } else if (e.target.textContent === "yellow") {
+                  audio = new Audio(`./audios/correct/${4}.mp3`);
+                }
                 audio.play();
                 await applyFilterWithAnimation(e.target, 'correct');
                 // console.log("nice")
@@ -129,6 +136,17 @@ function randomColor() {
 
 function animation(x) {
   return new Promise((resolve, reject) => {
+    let audio 
+    if (x.textContent === "red") {
+      audio = new Audio(`./audios/correct/${1}.mp3`);
+    } else if (x.textContent === "green") {
+      audio = new Audio(`./audios/correct/${2}.mp3`);
+    } else if (x.textContent === "blue") {
+      audio = new Audio(`./audios/correct/${3}.mp3`);
+    } else if (x.textContent === "yellow") {
+      audio = new Audio(`./audios/correct/${4}.mp3`);
+    }
+    audio.play()
     x.style.transition = "0.1s all ease-out";
     x.style.transform = "scale(1.1)";
     setTimeout(() => {
