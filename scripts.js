@@ -83,13 +83,13 @@ async function startGame() {
             if (e.target.textContent === colorQueryArr[clickCounter].textContent) {
                 clickCounter++;
                 let audio
-                if (e.target.textContent === "red") {
+                if (e.target.textContent == "red") {
                   audio = new Audio(`./audios/correct/${1}.mp3`);
-                } else if (e.target.textContent === "green") {
+                } else if (e.target.textContent == "green") {
                   audio = new Audio(`./audios/correct/${2}.mp3`);
-                } else if (e.target.textContent === "blue") {
+                } else if (e.target.textContent == "blue") {
                   audio = new Audio(`./audios/correct/${3}.mp3`);
-                } else if (e.target.textContent === "yellow") {
+                } else if (e.target.textContent == "yellow") {
                   audio = new Audio(`./audios/correct/${4}.mp3`);
                 }
                 audio.play();
